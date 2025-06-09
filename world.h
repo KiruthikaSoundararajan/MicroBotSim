@@ -1,11 +1,16 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include "Robot.h"
+#include "robot.h"
 
-class World{
+class World {
+private:
+    int w, h;
+public:
+    World(int w, int h);
+    int getW() const {return w;}
+    int getH() const {return h;}
+    void printWorld(const Robot& robot);
+};
 
-    int width,height;
-    world(int w, int h);
-    void printWorld(const Robot &robot);
-}
+#endif
