@@ -2,12 +2,20 @@
 #define ROBOT_H
 
 
+#include "world.h"
 #include<iostream>
 
 class Robot{
-    public:
-    int xPos,yPos;
-    Robot(int xPos,int yPos);
-    void move(int xUnit,int yUnit);
+    private:
 
-}
+    int x,y;
+
+    public:
+
+    Robot(int x,int y);
+    int getX() const {return x;}
+    int getY() const {return y;}
+    void move( World& world);
+
+};
+#endif
