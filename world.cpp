@@ -18,5 +18,6 @@ void World::printWorld(const Robot& robot){
             else std::cout << ".";
         }
     std::cout << std::endl;
-    }
+    }     
 }
+
