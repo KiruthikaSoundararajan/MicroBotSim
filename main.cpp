@@ -10,6 +10,7 @@ int main(){
     std::cout << "Initial Position of Robot is (" << robot.getX() << "," <<  robot.getY() << ")" << std::endl;
     world.printWorld(robot);
     robot.move(world);
+    
 
     return 0;
 
