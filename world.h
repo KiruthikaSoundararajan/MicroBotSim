@@ -15,6 +15,6 @@ class World{
     int getH() const { return h;}
     int getW() const { return w;}
 
-    void printWorld(const Robot &robot);
+    void printWorld(const Robot& robot);
 };
 #endif
