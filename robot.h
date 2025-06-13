@@ -1,8 +1,7 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
-
-#include "world.h"
+class World;
 
 
 class Robot{
