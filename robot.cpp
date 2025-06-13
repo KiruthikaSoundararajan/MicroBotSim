@@ -20,6 +20,7 @@ void Robot::move(World& world){
             temp--;
             if(temp<0) std::cout << "Oh no!! Robot exited the world. Returning to previous position" << std::endl;
             else x=temp;
+            break;
         }
 
         case 's':{
@@ -27,6 +28,7 @@ void Robot::move(World& world){
             temp++;
             if(temp>world.getH()) std::cout << "Oh no!! Robot exited the world. Returning to previous position" << std::endl;
             else x=temp;
+            break;
         }
 
          case 'a':{
@@ -34,6 +36,7 @@ void Robot::move(World& world){
             temp--;
             if(temp<0) std::cout << "Oh no!! Robot exited the world. Returning to previous position" << std::endl;
             else y=temp;
+            break;
         }
 
         case 'd':{
@@ -41,11 +44,13 @@ void Robot::move(World& world){
             temp++;
             if(temp>world.getW()) std::cout << "Oh no!! Robot exited the world. Returning to previous position" << std::endl;
             else y=temp;
+            break;
         }
         case 'q': return;
 
         default:{
             std::cout << "Robot does not understand your command!!\nDid you press the wrong key??\nRemember up->w, down->s, a->left ,d->right and 'q'is quit \n" << std::endl;
+            break;
         }
     }
     std::cout << "Robot's current position: " << x << "," << y << std::endl;
