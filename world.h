@@ -1,7 +1,7 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-class Robot;
+#include "robot.h"
 
 class World{
     
@@ -20,18 +20,18 @@ class World{
 
 class WorldManager{
 private:
-    Robot robot;
-    World world;
+    Robot& robot;
+    World& world;
 public:
    
-   int getWorldWidth() const{return world.getW();}
-   int getWorldHeight() const{return world.getH();}
-   int getRobotPosX() const {return robot.getX();}
-   int getRobotPosY() const {return robot.getX();}
+   int getWorldWidth(World& world) const{return world.getW();}
+   int getWorldHeight(World& world) const{return world.getH();}
+   int getRobotPosX(Robot& robot) const {return robot.getX();}
+   int getRobotPosY(Robot& robot) const {return robot.getX();}
     
 
 };
 #endif
 
 
-    
+
