@@ -1,7 +1,7 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
-class World;
+class WorldManager;
 
 
 class Robot{
@@ -14,7 +14,7 @@ class Robot{
     Robot(int x,int y);
     int getX() const {return x;}
     int getY() const {return y;}
-    void move( World& world);
+    void move( WorldManager& worldManager);
 
 };
 #endif
