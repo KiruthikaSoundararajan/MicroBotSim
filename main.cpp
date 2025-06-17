@@ -5,11 +5,11 @@
 
 int main(){
     World world(5,5);
-    Robot robot(1,2);
-
-    std::cout << "Initial Position of Robot is (" << robot.getX() << "," <<  robot.getY() << ")" << std::endl;
-    world.printWorld(robot);
-    robot.move(world);
+    Robot rob(1,2);
+    WorldManager robWorldManager();
+    std::cout << "Initial Position of Robot is (" << rob.getX() << "," <<  rob.getY() << ")" << std::endl;
+    world.printWorld(rob);
+    rob.move(world);
     
 
     return 0;
