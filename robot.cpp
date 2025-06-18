@@ -6,7 +6,7 @@
 
 Robot::Robot(int x,int y):x(x),y(y){}
 
-void Robot::move(World& world){
+void Robot::move(WorldManager& worldManager){
 
   while(true){
     char direction;
@@ -29,7 +29,7 @@ void Robot::move(World& world){
         case 's':{
             temp=x;
             temp++;
-            if(temp>world.getH()){ std::cout << "Oh no!! Robot exited the world. Moving two steps backb!!" << std::endl; temp--;}
+            if(temp>worldManager.getWorldHeight()){ std::cout << "Oh no!! Robot exited the world. Moving two steps backb!!" << std::endl; temp--;}
             x=temp;
             break;
         }
@@ -45,7 +45,7 @@ void Robot::move(World& world){
         case 'd':{
             temp=y;
             temp++;
-            if(temp>world.getW()){ std::cout << "Oh no!! Robot exited the world. Moving two steps backb!!" << std::endl; temp--;}
+            if(temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Moving two steps backb!!" << std::endl; temp--;}
             else y=temp;
             break;
         }
@@ -57,7 +57,7 @@ void Robot::move(World& world){
         }
     }
     std::cout << "Robot's current position: " << x << "," << y << std::endl;
-    world.printWorld(*this);
+    //world.printWorld(*this);
 }
 }
 //case sensitivity
