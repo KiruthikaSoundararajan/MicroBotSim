@@ -14,8 +14,9 @@ World::World(int w,int h): w(w),h(h){
 void World::printWorld(const Robot& robot){
     for(int x = 0; x<h; x++){
         for(int y=0; y<w; y++){
-            if(x==robot.getX() && y==robot.getY()) std::cout<<"R";
+            if(x==robot.getX() && y==robot.getY()) std::cout<<robot.getCurrentDirection();
             else std::cout << ".";
+            std::cout << " ";
         }
     std::cout << std::endl;
     }     
