@@ -23,14 +23,16 @@ void Robot::move(WorldManager& worldManager){
             temp--;
             if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             x=temp;
+            //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
 
         case 's':{
             temp=x;
             temp++;
-            if(temp>worldManager.getWorldHeight()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp--;}
+            if(temp==worldManager.getWorldHeight() || temp>worldManager.getWorldHeight()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp--;}
             x=temp;
+            //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
 
@@ -39,15 +41,18 @@ void Robot::move(WorldManager& worldManager){
             temp--;
             if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             y=temp;
+            //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
 
         case 'd':{
             temp=y;
             temp++;
-            if(temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!!!" << std::endl; temp--;}
+            if(temp == worldManager.getWorldWidth()|| temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp--;}
             y=temp;
+            //std::cout << "temp: " <<temp<<"World Width: "<<worldManager.getWorldWidth()<<std::endl;
             break;
+
         }
         case 'q': return;
 
