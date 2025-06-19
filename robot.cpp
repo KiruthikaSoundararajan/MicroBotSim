@@ -6,6 +6,7 @@
 
 Robot::Robot(int x,int y):x(x),y(y){}
 
+
 enum class Robot::directionVal{ 
     NORTH = '^',
     SOUTH = 'v',
@@ -13,6 +14,8 @@ enum class Robot::directionVal{
     WEST  = '<',
 
 };
+
+
 
 char Robot::setDirection(directionVal dir){
     return static_cast<char>(dir);
@@ -26,10 +29,12 @@ void Robot::move(WorldManager& worldManager){
     char directionInput,currentDirection;
     int temp=0;
 
+
     std::cout <<"Hey!! Where should the robot go?? Tell us using keys!!\n"<< "For up->w, down->s, a->left ,d->right" << "\n"
               << "Or if you feel bored quit using 'q'" << std::endl;
     std::cin >> directionInput;
     directionInput = std::tolower(directionInput);
+
 
     switch(directionInput){
         case 'w':{
@@ -72,16 +77,19 @@ void Robot::move(WorldManager& worldManager){
             break;
 
         }
+
         case 'q': return;
 
-        default:{
+        default:
+        {
             std::cout << "Robot does not understand your command!!\nDid you press the wrong key??\nRemember up->w, down->s, a->left ,d->right and 'q'is quit \n" << std::endl;
             break;
         }
     }
     std::cout << "Robot's current position: " << x << "," << y << std::endl;
     worldManager.printWorld();
-}
+  }
+
 }
 //case sensitivity
 //also robot goes back to (0,world edge) in the previous position which may not be optimal.so can return back to 2 sreps to move again???
