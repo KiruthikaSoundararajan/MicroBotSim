@@ -38,15 +38,15 @@ void Robot::move(WorldManager& worldManager){
             temp=y;
             temp--;
             if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
-            else y=temp;
+            y=temp;
             break;
         }
 
         case 'd':{
             temp=y;
             temp++;
-            if(temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Moving two steps back!!" << std::endl; temp--;}
-            else y=temp;
+            if(temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!!!" << std::endl; temp--;}
+            y=temp;
             break;
         }
         case 'q': return;
