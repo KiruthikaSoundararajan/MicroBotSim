@@ -42,7 +42,7 @@ void Robot::move(WorldManager& worldManager){
             temp--;
             if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             x=temp;
-            currentDirection = setDirection(directionVal::NORTH);
+            currentDirection = setDirection(Robot::directionVal::NORTH);
             //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
@@ -52,7 +52,7 @@ void Robot::move(WorldManager& worldManager){
             temp++;
             if(temp==worldManager.getWorldHeight() || temp>worldManager.getWorldHeight()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp--;}
             x=temp;
-            currentDirection = setDirection(directionVal::SOUTH);
+            currentDirection = setDirection(Robot::directionVal::SOUTH);
             //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
@@ -62,7 +62,7 @@ void Robot::move(WorldManager& worldManager){
             temp--;
             if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             y=temp;
-            currentDirection = setDirection(directionVal::WEST);
+            currentDirection = setDirection(Robot::directionVal::WEST);
             //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
@@ -72,7 +72,7 @@ void Robot::move(WorldManager& worldManager){
             temp++;
             if(temp == worldManager.getWorldWidth()|| temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp--;}
             y=temp;
-            currentDirection = setDirection(directionVal::EAST);
+            currentDirection = setDirection(Robot::directionVal::EAST);
             //std::cout << "temp: " <<temp<<"World Width: "<<worldManager.getWorldWidth()<<std::endl;
             break;
 
