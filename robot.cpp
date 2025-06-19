@@ -21,7 +21,7 @@ void Robot::move(WorldManager& worldManager){
         case 'w':{
             temp=x;
             temp--;
-            if(temp<0){ std::cout << "Oh no!! Robot exited the world. Moving two steps backb!!" << std::endl; temp++;}
+            if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             x=temp;
             break;
         }
@@ -29,7 +29,7 @@ void Robot::move(WorldManager& worldManager){
         case 's':{
             temp=x;
             temp++;
-            if(temp>worldManager.getWorldHeight()){ std::cout << "Oh no!! Robot exited the world. Moving two steps backb!!" << std::endl; temp--;}
+            if(temp>worldManager.getWorldHeight()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp--;}
             x=temp;
             break;
         }
@@ -37,7 +37,7 @@ void Robot::move(WorldManager& worldManager){
          case 'a':{
             temp=y;
             temp--;
-            if(temp<0){ std::cout << "Oh no!! Robot exited the world. Moving two steps backb!!" << std::endl; temp++;}
+            if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             else y=temp;
             break;
         }
@@ -45,7 +45,7 @@ void Robot::move(WorldManager& worldManager){
         case 'd':{
             temp=y;
             temp++;
-            if(temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Moving two steps backb!!" << std::endl; temp--;}
+            if(temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Moving two steps back!!" << std::endl; temp--;}
             else y=temp;
             break;
         }
@@ -57,7 +57,7 @@ void Robot::move(WorldManager& worldManager){
         }
     }
     std::cout << "Robot's current position: " << x << "," << y << std::endl;
-    //world.printWorld(*this);
+    worldManager.printWorld();
 }
 }
 //case sensitivity
