@@ -27,7 +27,7 @@ public:
    int getWorldWidth() const{return world.getW();}
    int getWorldHeight() const{return world.getH();}
    int getRobotPosX() const {return robot.getX();}
-   int getRobotPosY() const {return robot.getX();}
+   int getRobotPosY() const {return robot.getY();}
     
 
 };

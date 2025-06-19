@@ -9,7 +9,7 @@ int main(){
     WorldManager robWorldManager();
     std::cout << "Initial Position of Robot is (" << rob.getX() << "," <<  rob.getY() << ")" << std::endl;
     world.printWorld(rob);
-    rob.move(world);
+    rob.move(robWorldManager());
     
 
     return 0;
