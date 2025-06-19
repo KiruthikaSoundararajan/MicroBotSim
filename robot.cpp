@@ -4,25 +4,35 @@
 #include <iostream>
 #include <cctype>
 
-Robot::Robot(int x,int y):x(x),y(y){}
+Robot::Robot(int x,int y):x(x),y(y){ int asciiDirection = 94;
+                                     char orientation   = static_cast<char>(asciiDirection);}
+
+enum class direction{ 
+    NORTH = '^',
+    SOUTH = 'v',
+    EAST  = '>',
+    WEST  = '<',
+
+};
 
 void Robot::move(WorldManager& worldManager){
 
   while(true){
-    char direction;
+    char directionInput;
     int temp=0;
 
     std::cout <<"Hey!! Where should the robot go?? Tell us using keys!!\n"<< "For up->w, down->s, a->left ,d->right" << "\n"
               << "Or if you feel bored quit using 'q'" << std::endl;
-    std::cin >> direction;
-    direction = std::tolower(direction);
+    std::cin >> directionInput;
+    directionInput = std::tolower(directionInput);
 
-    switch(direction){
+    switch(directionInput){
         case 'w':{
             temp=x;
             temp--;
             if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             x=temp;
+            
             //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
