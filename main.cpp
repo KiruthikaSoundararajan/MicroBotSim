@@ -4,12 +4,12 @@
 #include "robot.h"
 
 int main(){
-    World world(5,5);
+    World robWorld(5,5);
     Robot rob(1,2);
-    WorldManager robWorldManager();
+    WorldManager robWorldManager(rob,robWorld);
     std::cout << "Initial Position of Robot is (" << rob.getX() << "," <<  rob.getY() << ")" << std::endl;
-    world.printWorld(rob);
-    rob.move(robWorldManager());
+    robWorld.printWorld(rob);
+    rob.move(robWorldManager);
     
 
     return 0;
