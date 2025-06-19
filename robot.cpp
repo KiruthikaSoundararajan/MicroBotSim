@@ -4,10 +4,9 @@
 #include <iostream>
 #include <cctype>
 
-Robot::Robot(int x,int y):x(x),y(y){ int asciiDirection = 94;
-                                     char orientation   = static_cast<char>(asciiDirection);}
+Robot::Robot(int x,int y):x(x),y(y){}
 
-enum class direction{ 
+enum class Robot::directionVal{ 
     NORTH = '^',
     SOUTH = 'v',
     EAST  = '>',
@@ -15,10 +14,16 @@ enum class direction{
 
 };
 
+char Robot::setDirection(directionVal dir){
+    return static_cast<char>(dir);
+}
+
+
 void Robot::move(WorldManager& worldManager){
 
   while(true){
-    char directionInput;
+
+    char directionInput,currentDirection;
     int temp=0;
 
     std::cout <<"Hey!! Where should the robot go?? Tell us using keys!!\n"<< "For up->w, down->s, a->left ,d->right" << "\n"
@@ -32,7 +37,7 @@ void Robot::move(WorldManager& worldManager){
             temp--;
             if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             x=temp;
-            
+            currentDirection = setDirection(directionVal::NORTH);
             //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
@@ -42,6 +47,7 @@ void Robot::move(WorldManager& worldManager){
             temp++;
             if(temp==worldManager.getWorldHeight() || temp>worldManager.getWorldHeight()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp--;}
             x=temp;
+            currentDirection = setDirection(directionVal::SOUTH);
             //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
@@ -51,6 +57,7 @@ void Robot::move(WorldManager& worldManager){
             temp--;
             if(temp<0){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp++;}
             y=temp;
+            currentDirection = setDirection(directionVal::WEST);
             //std::cout << "temp: " <<temp<<std::endl;
             break;
         }
@@ -60,6 +67,7 @@ void Robot::move(WorldManager& worldManager){
             temp++;
             if(temp == worldManager.getWorldWidth()|| temp>worldManager.getWorldWidth()){ std::cout << "Oh no!! Robot exited the world. Returning to previous position!!" << std::endl; temp--;}
             y=temp;
+            currentDirection = setDirection(directionVal::EAST);
             //std::cout << "temp: " <<temp<<"World Width: "<<worldManager.getWorldWidth()<<std::endl;
             break;
 
