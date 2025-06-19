@@ -23,7 +23,8 @@ private:
     Robot& robot;
     World& world;
 public:
-   
+   WorldManager(Robot& robot,World& world):robot(robot),world(world){}
+
    int getWorldWidth() const{return world.getW();}
    int getWorldHeight() const{return world.getH();}
    int getRobotPosX() const {return robot.getX();}
